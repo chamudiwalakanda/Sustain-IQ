@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+:root {
+  --brand-maroon: #7a1f2b;
+  --brand-maroon-dark: #5e1822;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  background-color: #f6f5f1;
+  color: #1c2420;
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: "Bricolage Grotesque", "Inter", system-ui, sans-serif;
+}
+
+.text-maroon {
+  color: var(--brand-maroon);
+}
+.bg-maroon {
+  background-color: var(--brand-maroon);
+}
+.bg-maroon-dark {
+  background-color: var(--brand-maroon-dark);
+}
+.border-maroon {
+  border-color: var(--brand-maroon);
+}
+
+/* Tidy scrollbars for the room grid and chat */
+.scroll-soft::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-soft::-webkit-scrollbar-thumb {
+  background: #d6d3cb;
+  border-radius: 9999px;
+}
+.scroll-soft::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
