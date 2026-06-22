@@ -107,7 +107,7 @@ export default function AuthPage({ onAuthed, showToast }) {
       </div>
 
       {/* Form panel */}
-      <div className="flex items-center justify-center p-6 sm:p-10">
+      <div className="flex items-center justify-center p-5 sm:p-10">
         <div className="w-full max-w-md">
           <div className="lg:hidden flex items-center gap-2 mb-6">
             <span className="grid place-items-center w-9 h-9 rounded-xl bg-maroon text-white">
@@ -192,7 +192,7 @@ export default function AuthPage({ onAuthed, showToast }) {
                   <select
                     value={form.faculty}
                     onChange={(e) => update('faculty', e.target.value)}
-                    className="w-full rounded-lg border border-stone-200 px-3 py-2.5 text-sm text-stone-800 bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+                    className="w-full min-h-[44px] rounded-lg border border-stone-200 px-3 py-2.5 text-sm text-stone-800 bg-white focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
                   >
                     {FACULTIES.map((f) => (
                       <option key={f} value={f}>
@@ -229,7 +229,7 @@ export default function AuthPage({ onAuthed, showToast }) {
               type="button"
               onClick={handleSubmit}
               disabled={submitting}
-              className="w-full flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-semibold py-3 rounded-xl transition-colors"
+              className="w-full flex items-center justify-center gap-2 min-h-[44px] bg-emerald-600 hover:bg-emerald-700 disabled:opacity-60 text-white font-semibold py-3 rounded-xl transition-colors"
             >
               {submitting && <Loader2 size={18} className="animate-spin" />}
               {mode === 'register' ? 'Create account' : 'Log in'}
@@ -265,7 +265,7 @@ function Field({ label, value, onChange, placeholder, type = 'text', error }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
-        className={`w-full rounded-lg border px-3 py-2.5 text-sm text-stone-800 bg-white focus:outline-none focus:ring-2 ${
+        className={`w-full min-h-[44px] rounded-lg border px-3 py-2.5 text-sm text-stone-800 bg-white focus:outline-none focus:ring-2 ${
           error
             ? 'border-rose-300 focus:border-rose-400 focus:ring-rose-100'
             : 'border-stone-200 focus:border-emerald-500 focus:ring-emerald-100'
