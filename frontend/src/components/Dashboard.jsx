@@ -52,7 +52,7 @@ export default function Dashboard({ user }) {
         <p className="text-rose-600 text-sm mt-1">{error}</p>
         <button
           onClick={load}
-          className="mt-4 inline-flex items-center gap-2 bg-rose-600 text-white text-sm px-4 py-2 rounded-lg hover:bg-rose-700"
+          className="mt-4 inline-flex items-center justify-center gap-2 bg-rose-600 text-white text-sm px-4 py-2 min-h-[44px] rounded-lg hover:bg-rose-700"
         >
           <RefreshCw size={15} /> Try again
         </button>
@@ -70,7 +70,7 @@ export default function Dashboard({ user }) {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl bg-white border border-stone-200 p-6">
+      <div className="rounded-2xl bg-white border border-stone-200 p-5 sm:p-6">
         <p className="text-xs font-semibold uppercase tracking-wide text-emerald-700">University of Ruhuna · Campus overview</p>
         <h2 className="font-display text-2xl font-bold text-stone-900 mt-1">
           Welcome, {user.fullName.split(' ')[0]}
@@ -81,15 +81,15 @@ export default function Dashboard({ user }) {
         </p>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
         {cards.map((c) => {
           const Icon = c.icon
           return (
-            <div key={c.label} className="rounded-2xl bg-white border border-stone-200 p-5">
+            <div key={c.label} className="rounded-2xl bg-white border border-stone-200 p-4 sm:p-5">
               <span className={`grid place-items-center w-10 h-10 rounded-xl ${c.tint}`}>
                 <Icon size={20} />
               </span>
-              <p className="font-display text-2xl font-bold text-stone-900 mt-3">{c.value}</p>
+              <p className="font-display text-xl sm:text-2xl font-bold text-stone-900 mt-3">{c.value}</p>
               <p className="text-xs text-stone-500 mt-0.5">{c.label}</p>
             </div>
           )
@@ -138,7 +138,7 @@ const tooltipStyle = {
 
 function ChartCard({ title, subtitle, children }) {
   return (
-    <div className="rounded-2xl bg-white border border-stone-200 p-5">
+    <div className="rounded-2xl bg-white border border-stone-200 p-4 sm:p-5">
       <h3 className="font-semibold text-stone-800">{title}</h3>
       <p className="text-xs text-stone-500 mb-4">{subtitle}</p>
       <div className="h-60">
