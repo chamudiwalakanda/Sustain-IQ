@@ -52,8 +52,8 @@ export default function GrievanceDesk({ showToast }) {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <div className="rounded-2xl bg-white border border-stone-200 overflow-hidden flex flex-col h-[560px]">
-        <div className="flex items-center gap-2 px-5 py-4 border-b border-stone-100">
+      <div className="rounded-2xl bg-white border border-stone-200 overflow-hidden flex flex-col h-[calc(100dvh-176px)] min-h-[420px] md:h-[560px]">
+        <div className="flex items-center gap-2 px-4 sm:px-5 py-4 border-b border-stone-100">
           <span className="grid place-items-center w-9 h-9 rounded-xl bg-emerald-600 text-white">
             <MessageSquareHeart size={18} />
           </span>
@@ -63,11 +63,11 @@ export default function GrievanceDesk({ showToast }) {
           </div>
         </div>
 
-        <div ref={scrollRef} className="flex-1 overflow-y-auto scroll-soft p-5 space-y-4 bg-stone-50/60">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto scroll-soft p-4 sm:p-5 space-y-4 bg-stone-50/60">
           {messages.map((msg, i) => (
             <div key={i} className={`flex ${msg.bot ? 'justify-start' : 'justify-end'}`}>
               <div
-                className={`max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                className={`max-w-[85%] sm:max-w-[80%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                   msg.bot
                     ? 'bg-white border border-stone-200 text-stone-700'
                     : 'bg-emerald-600 text-white'
@@ -101,12 +101,12 @@ export default function GrievanceDesk({ showToast }) {
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && send()}
             placeholder="Describe your issue (e.g. the water tap in A-103 is broken)…"
-            className="flex-1 rounded-xl border border-stone-200 px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
+            className="flex-1 min-h-[44px] rounded-xl border border-stone-200 px-4 py-2.5 text-sm focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100"
           />
           <button
             onClick={send}
             disabled={sending || !input.trim()}
-            className="grid place-items-center w-11 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:bg-stone-200 text-white transition-colors"
+            className="grid place-items-center w-11 min-h-[44px] shrink-0 rounded-xl bg-emerald-600 hover:bg-emerald-700 disabled:bg-stone-200 text-white transition-colors"
             aria-label="Send"
           >
             <Send size={16} />
