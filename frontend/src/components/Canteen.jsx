@@ -83,10 +83,7 @@ function FoodImage({ src, alt }) {
   )
 }
 
-// Signature element: a tray-compartment style gauge. It reframes "portions
-// left" as a depleting strip — the same visual language as watching a
-// canteen tray empty out — which is the whole point of this app: make
-// scarcity visible so food gets cooked, and eaten, to the right amount.
+
 function PortionGauge({ portionsLeft, max = 20 }) {
   const ratio = Math.min(portionsLeft / max, 1)
   const level = stockLevel(portionsLeft)
@@ -198,7 +195,7 @@ export default function Canteen({ user, showToast }) {
         <p className="text-rose-600 text-sm mt-1 break-words">{error}</p>
         <button
           onClick={load}
-          className="mt-4 inline-flex items-center justify-center gap-2 bg-rose-600 text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-rose-700 active:scale-[0.97] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 w-full sm:w-auto"
+          className="mt-4 inline-flex items-center justify-center gap-2 bg-rose-600 text-white text-sm font-medium px-4 py-2.5 min-h-[44px] rounded-lg hover:bg-rose-700 active:scale-[0.97] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 w-full sm:w-auto"
         >
           <RefreshCw size={15} /> Try again
         </button>
@@ -311,7 +308,7 @@ export default function Canteen({ user, showToast }) {
                         <button
                           onClick={() => reserve(item.id)}
                           disabled={level === 'out' || reservingId === item.id}
-                          className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.97] disabled:bg-stone-200 disabled:text-stone-400 disabled:active:scale-100 text-white text-sm font-medium px-3.5 py-2 rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 shrink-0 min-w-[92px]"
+                          className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.97] disabled:bg-stone-200 disabled:text-stone-400 disabled:active:scale-100 text-white text-sm font-medium px-3.5 py-2 min-h-[44px] rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 shrink-0 min-w-[92px]"
                         >
                           {reservingId === item.id && <Loader2 size={14} className="animate-spin" />}
                           {level === 'out' ? 'Unavailable' : 'Reserve'}
