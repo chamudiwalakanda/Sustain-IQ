@@ -135,7 +135,7 @@ export default function Hostel({ user, showToast }) {
         <p className="text-rose-600 text-sm mt-1 break-words">{error}</p>
         <button
           onClick={load}
-          className="mt-4 inline-flex items-center justify-center gap-2 bg-rose-600 text-white text-sm font-medium px-4 py-2.5 rounded-lg hover:bg-rose-700 active:scale-[0.97] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 w-full sm:w-auto"
+          className="mt-4 inline-flex items-center justify-center gap-2 bg-rose-600 text-white text-sm font-medium px-4 py-2.5 min-h-[44px] rounded-lg hover:bg-rose-700 active:scale-[0.97] transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 w-full sm:w-auto"
         >
           <RefreshCw size={15} /> Try again
         </button>
@@ -179,7 +179,7 @@ export default function Hostel({ user, showToast }) {
             <button
               onClick={() => attendance('in')}
               disabled={attendanceBusy !== null}
-              className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.97] disabled:opacity-60 disabled:active:scale-100 text-white text-sm font-medium py-2.5 rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-[0.97] disabled:opacity-60 disabled:active:scale-100 text-white text-sm font-medium py-2.5 min-h-[44px] rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2"
             >
               {attendanceBusy === 'in' ? <Loader2 size={15} className="animate-spin" /> : <LogIn size={15} />}
               Check in
@@ -187,7 +187,7 @@ export default function Hostel({ user, showToast }) {
             <button
               onClick={() => attendance('out')}
               disabled={attendanceBusy !== null}
-              className="inline-flex items-center justify-center gap-1.5 bg-stone-800 hover:bg-stone-900 active:scale-[0.97] disabled:opacity-60 disabled:active:scale-100 text-white text-sm font-medium py-2.5 rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2"
+              className="inline-flex items-center justify-center gap-1.5 bg-stone-800 hover:bg-stone-900 active:scale-[0.97] disabled:opacity-60 disabled:active:scale-100 text-white text-sm font-medium py-2.5 min-h-[44px] rounded-lg transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-stone-600 focus-visible:ring-offset-2"
             >
               {attendanceBusy === 'out' ? <Loader2 size={15} className="animate-spin" /> : <LogOut size={15} />}
               Check out
